@@ -1,9 +1,9 @@
 import {Sequelize} from 'sequelize'
 
 const sequelize = new Sequelize(
-    "notes_virtuosway",
+    "notes_typescript",
     "root",
-    "hello_world",
+    process.env.PASSWORD,
     {
         host: 'localhost',
         dialect: 'mysql'
