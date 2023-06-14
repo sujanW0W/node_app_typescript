@@ -37,6 +37,9 @@ import express, {Application, Request, Response} from 'express'
 
 //Routers
 import {router as usersRoute} from './routes/users'
+import { router as notesRoute } from './routes/notes'
+
+import auth from './middleware/auth'
 
 class App{
     public app: Application;
@@ -45,6 +48,7 @@ class App{
         this.config()
         
         this.app.use('/api/v1/users', usersRoute)
+        this.app.use('/api/v1/notes',auth, notesRoute)
     }
 
     private config(): void{

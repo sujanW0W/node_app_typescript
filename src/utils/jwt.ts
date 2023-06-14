@@ -1,12 +1,7 @@
 import * as jwt from 'jsonwebtoken'
+import { UserResponse } from './userRequest'
 
-interface infoType{
-    id: number,
-    name: string,
-    username: string,
-}
-
-const generateToken = (userInfo: infoType): string => {
+const generateToken = (userInfo: UserResponse): string => {
     const token = jwt.sign(userInfo, String(process.env.JWT_SECRET), {expiresIn: process.env.JWT_LIFETIME})
 
     return token

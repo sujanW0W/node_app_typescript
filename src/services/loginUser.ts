@@ -22,7 +22,7 @@ export const login = async (userInput: UserCredentials): Promise<string> => {
         throw new Error("Password not match")
 
     const userInfo: UserResponse = {
-        id: user.id,
+        userId: user.id,
         name: user.name,
         username: user.username
     }

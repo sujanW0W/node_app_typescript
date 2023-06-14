@@ -22,7 +22,7 @@ export const createUser = async (userInput: RegisterUserCredentials): Promise<st
     const user = JSON.parse(JSON.stringify(response))
     
     const userInfo: UserResponse = {
-        id: user.id,
+        userId: user.id,
         name: user.name,
         username: user.username, 
     }

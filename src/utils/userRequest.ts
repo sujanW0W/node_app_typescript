@@ -12,7 +12,11 @@ export interface RegisterUserCredentials{
 }
 
 export interface UserResponse{
-    id: number,
+    userId: number,
     name: string,
     username: string
+}
+
+export const isUserResponse = (obj: any): obj is UserResponse => {
+    return 'userId' in obj && 'name' in obj && 'username' in obj;
 }
